@@ -1,4 +1,3 @@
-
 var myCanvas = document.getElementById("myCanvas");
 var context = myCanvas.getContext('2d');
 var lineWidth = 2;
@@ -13,25 +12,11 @@ var eraserSwitch = false;
 
 // var eraserPointer = document.querySelector(".eraserPointer");
 
+//顶部四按钮
 var paintBrush = document.querySelector(".icon-paint-brush");
 var paintEraser = document.querySelector(".icon-eraser");
 var paintClear = document.querySelector(".icon-clear");
 var paintSave = document.querySelector(".icon-save");
-
-var thinBrush = document.querySelector(".paintLineWidth li:first-child");
-var thickBrush = document.querySelector(".paintLineWidth li:last-child");
-
-thinBrush.onclick = function(){
-    lineWidth = 2;
-    pThickIco.classList.remove('PTactive');
-    pThinIco.classList.add('PTactive');
-}
-
-thickBrush.onclick = function(){
-    lineWidth = 5;
-    pThinIco.classList.remove('PTactive');
-    pThickIco.classList.add('PTactive');
-}
 
 paintBrush.onclick = function (event) {
     paintBrush.classList.add('active');
@@ -71,6 +56,21 @@ paintSave.onclick = function (event) {
     saveCanvas(myCanvas);
 }
 
+//画笔粗细
+var thinBrush = document.querySelector(".paintLineWidth li:first-child");
+var thickBrush = document.querySelector(".paintLineWidth li:last-child");
+
+thinBrush.onclick = function(){
+    lineWidth = 2;
+    pThickIco.classList.remove('PTactive');
+    pThinIco.classList.add('PTactive');
+}
+
+thickBrush.onclick = function(){
+    lineWidth = 5;
+    pThinIco.classList.remove('PTactive');
+    pThickIco.classList.add('PTactive');
+}
 
 //画笔颜色
 var brushColor = 'black';
@@ -104,7 +104,7 @@ paintBlue.onclick = function (event) {
     brushColor = 'blue';
 }
 
-
+//正文
 //设置画布大小
 setCanvasSize();
 window.onresize = function () {
@@ -113,6 +113,8 @@ window.onresize = function () {
 
 setCanvasbg(myCanvas);
 watchAction(myCanvas);
+
+//工具函数
 
 //初始化画布背景色为白，否则保存图片为透明背景
 function setCanvasbg(canvas) {
@@ -167,7 +169,7 @@ function saveCanvas(canvas) {
     saveLink.click();
 }
 
-
+//监听玩家操作
 function watchAction(canvas) {
     var lastX,lastY = undefined;
     canvas.onmousedown = function (event) {
@@ -184,7 +186,6 @@ function watchAction(canvas) {
             eraseLine(x,y)
         }
     }
-
     canvas.onmousemove = function (event) {
         var newX,newY;
         if (brushSwitch && mousedownOnOff) {
