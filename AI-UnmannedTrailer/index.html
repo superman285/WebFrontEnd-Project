@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="darkTheme">
+<head>
+    <meta charset="UTF-8">
+    <title>AITrailer</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <!--bootstrap-->
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <!--自用-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+
+    <!--iconfont-->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_853916_te7qkuzzn7e.css">
+
+    <!--外部按钮&字体样式-->
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/external-component.css">
+
+</head>
+<body>
+
+<header class="appHeader">
+
+    <img src="img/pc-logo.png" alt="LOGO" class="logo">
+
+    <button class="chver-btn button button-glow button-border button-rounded button-pill">Check Version</button>
+    <select class="custom-select" name="" id="sel1">
+        <option value="Navigation">Navigation</option>
+        <option value="Navigation2">Navigation2</option>
+    </select>
+    <select class="custom-select" name="" id="sel2">
+        <option>Vehicle</option>
+    </select>
+    <select class="custom-select" name="" id="sel3">
+        <option>Big Loop</option>
+    </select>
+</header>
+
+
+<div class="mainWrap">
+
+    <aside class="asideNav">
+        <div class="as-top">
+            <i class="iconfont icon-gongju3"></i>
+            <span>UV</span></div>
+        <div class="as-top">
+            <i class="iconfont icon-gongju"></i>
+            <span>Tasks</span></div>
+        <div class="as-top">
+            <i class="iconfont icon-gongju2"></i>
+            <span>Unmanned</span></div>
+        <div class="as-top">
+            <i class="iconfont icon-layers"></i>
+            <span>Trailer</span></div>
+        <div class="as-top">
+            <i class="iconfont icon-tool"></i>
+            <span class="wrapSpan">Controller</span></div>
+        <div class="as-bot">Voice Command</div>
+        <div class="as-bot">Default Routing</div>
+    </aside>
+
+    <main class="mainContent"></main>
+
+    <section class="functionArea1">
+        <h5>Emergency Control</h5>
+        <form action="../form.py" method="post" class="btnStartForm">
+            <button class="fA1-btn controlBtn-start" type="submit" value="btn-start" name="optionsRadiosinline">
+                START
+            </button>
+        </form>
+        <form action="../form.py" method="post" class="btnStopForm">
+            <button class="fA1-btn controlBtn-stop" type="submit" value="btn-stop" name="optionsRadiosinline">
+                Break
+            </button>
+        </form>
+    </section>
+
+    <section class="functionArea2">
+        <h5>Routes Selection</h5>
+        <!--<label class="radio-inline">-->
+        <!--<input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="option1" checked>Route 1-->
+        <!--</label>-->
+        <!--<label class="radio-inline">-->
+        <!--<input type="radio" name="optionsRadiosinline" id="optionsRadios2" value="option2">Route 2-->
+        <!--</label>-->
+        <!--<label class="radio-inline">-->
+        <!--<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option3">Route 3-->
+        <!--</label>-->
+
+        <form action="../form.py" method="post" class="radioForm">
+            <div class="radio">
+                <input name="optionsRadiosinline" id="optionsRadios1" value="option1" type="radio" checked>
+                <label for="optionsRadios1" class="radio-label">Route 1</label>
+            </div>
+
+            <div class="radio">
+                <input name="optionsRadiosinline" id="optionsRadios2" value="option2" type="radio">
+                <label for="optionsRadios2" class="radio-label">Route 2</label>
+            </div>
+
+            <div class="radio">
+                <input name="optionsRadiosinline" id="optionsRadios3" value="option3" type="radio">
+                <label for="optionsRadios3" class="radio-label">Route 3</label>
+            </div>
+
+            <button type="submit" class="confirm-btn fA2-btn">Confirm</button>
+
+        </form>
+    </section>
+    <section class="functionArea3"></section>
+    <section class="functionArea4"></section>
+</div>
+
+
+<div class="whiteblank"></div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

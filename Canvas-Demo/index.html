@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_870230_9mdyhruh4jh.css">
+    <script src="//at.alicdn.com/t/font_870230_h3lqi0anqhf.js"></script>
+</head>
+<body id="body">
+
+
+    <canvas id="myCanvas">
+    </canvas>
+
+    <svg class="icon active icon-paint-brush" aria-hidden="true">
+        <use xlink:href="#icon-paint-brush"></use>
+    </svg>
+    <svg class="icon icon-eraser" aria-hidden="true">
+        <use xlink:href="#icon-eraser"></use>
+    </svg>
+    <svg class="icon icon-clear" aria-hidden="true">
+        <use xlink:href="#icon-clear"></use>
+    </svg>
+    <svg class="icon icon-save" aria-hidden="true">
+        <use xlink:href="#icon-save"></use>
+    </svg>
+
+    <ul class="paintColors">
+        <li id="paintBlack" class="active"></li>
+        <li id="paintRed"></li>
+        <li id="paintGreen"></li>
+        <li id="paintBlue"></li>
+    </ul>
+
+    <ul class="paintLineWidth">
+        <li><span id="paintThin"></span><span id="pThinIco" class="iconfont icon-ic_brush PTactive"></span></li>
+        <li><span id="paintThick"></span><span id="pThickIco" class="iconfont icon-ic_brush"></span></li>
+    </ul>
+
+
+    <div class="eraserPointer"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

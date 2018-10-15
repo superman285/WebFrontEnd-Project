@@ -1,0 +1,182 @@
+
+html.darkTheme {
+    min-width: 800px;
+    min-height: 600px;
+    filter: none;
+    transition: all 0.5s linear;
+}
+html.lightTheme {
+    filter: invert(1);
+}
+
+header.appHeader {
+    height: 65px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.appHeader .chver-btn {
+    margin-left: auto;
+    padding: 0 20px;
+    font-weight: bold;
+}
+.appHeader select:first-of-type {
+    width: 12%;
+    margin-left: 20px;
+    background: #000;
+    color: lightgrey;
+    background: #000 url("../img/down-arrow.png") 96% center no-repeat;
+    background-size: 18px 16px;
+}
+.appHeader select:nth-of-type(2) {
+    width: 12%;
+    margin-left: 20px;
+    color: lightgrey;
+    background: #000 url("../img/down-arrow.png") 96% center no-repeat;
+    background-size: 18px 16px;
+}
+.appHeader select:last-of-type {
+    width: 15%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: lightgrey;
+    background: #000 url("../img/down-arrow.png") 96% center no-repeat;
+    background-size: 18px 16px;
+}
+
+.mainWrap {
+    display: grid;
+    background-color: #000;
+    grid-template-rows: minmax(360px,3fr) minmax(240px,2fr);
+    grid-template-columns: 100px 1fr 1fr 1.2fr 1.2fr;
+    grid-column-gap: 3px;
+    grid-template-areas: "as main main main main"
+                           "as fun1 fun2 fun3 fun4"
+}
+
+aside.asideNav {
+    background-color: #23272a;
+    grid-area: as;
+}
+
+main.mainContent {
+    background-color: #01141d;
+    grid-area: main;
+    border-bottom: 5px solid #1b1d20;
+}
+
+section.functionArea1 {
+    background-color: #23272a;
+    grid-area: fun1;
+}
+section.functionArea2 {
+    background-color: #23272a;
+    grid-area: fun2;
+}
+section.functionArea3 {
+    background-color: #23272a;
+    grid-area: fun3;
+}
+section.functionArea4 {
+    background-color: #23272a;
+    grid-area: fun4;
+}
+
+/*侧边栏*/
+aside.asideNav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.asideNav>div {
+    text-align: center;
+    font-size: 1rem;
+    color: #aaa;
+    /*line-height: 18px;*/
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.asideNav .as-top {
+    height: 80px;
+}
+.asideNav .as-bot {
+    height: 60px;
+}
+.asideNav>div:nth-last-child(2){
+    margin-top: auto;
+}
+
+.asideNav i {
+    display: block;
+    font-size: 1.7rem;
+    margin-bottom: -5px;
+}
+.asideNav>div:hover {
+    background: #2e353b;
+}
+
+
+
+/*底部功能区*/
+
+.functionArea1>h5,.functionArea2>h5 {
+    display: inline-block;
+    color: #aaa;
+    border-bottom: 2px solid grey;
+    padding-bottom: 10px;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+.fA1-btn,.fA2-btn {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(2,38,25,0.9) 100%);
+    border-bottom: 3px solid #238f63;
+    box-sizing: border-box;
+    color: #989898;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+.fA2-btn {
+    margin:10px;
+}
+
+.fA1-btn:hover,.fA2-btn:hover {
+    filter: hue-rotate(200deg);
+    color: #aaaaaa;
+
+}
+
+/*功能区2*/
+.radio:nth-child(1) {
+    margin-top: 20px;
+}
+.radio {
+    padding-left: 5px;
+}
+
+.radio label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccc;
+}
+
+.whiteblank {
+    height: 10px;
+}

@@ -1,0 +1,140 @@
+
+/*iconfont图标*/
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.eraserPointer {
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    /*border-radius: 10px;*/
+    display: block;
+    /*position: absolute;*/
+    z-index: 66;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+body {
+    overflow: hidden;
+}
+
+#myCanvas {
+    /*position: fixed;*/
+    /*top: 60px;
+    left: 35px;*/
+}
+
+
+svg {
+    font-size: 1.75rem;
+    margin: 10px 10px;
+    position: absolute;
+    background: #ffffff;
+}
+
+svg:nth-child(3) {
+    top:0;
+    left:0;
+    transition: all .4s linear;
+}
+svg:nth-child(4) {
+    top:0;
+    left:50px;
+    transition: box-shadow,transform .4s linear;
+}
+svg:nth-child(5) {
+    top:0;
+    left:100px;
+}
+svg:nth-child(6) {
+    top:0;
+    left:150px;
+}
+
+
+svg.active {
+    /*margin: 10px;*/
+    box-shadow: 0px 0px 10px 1px yellowgreen;
+    transform: scale(1.1);
+}
+
+svg.active2 {
+    /*margin: 10px;*/
+    transform: scale(1.1);
+}
+
+.paintColors {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+}
+
+.paintColors li {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: all .4s linear;
+}
+.paintColors #paintBlack {
+    background: #000;
+}
+.paintColors #paintRed {
+    background: red;
+}
+.paintColors #paintGreen {
+    background: green;
+}
+.paintColors #paintBlue {
+    background: blue;
+}
+
+.paintColors li.active {
+    box-shadow: 0 0 5px 2px #999999;
+    transform: scale(1.1);
+}
+
+
+.paintLineWidth {
+    position: fixed;
+    right: 20px;
+    top: 0px;
+    background: #ffffff;
+}
+
+.paintLineWidth #paintThin {
+    display: inline-block;
+    height: 0;
+    width: 40px;
+    border-top: 2px solid black;
+    margin-right: 3px;
+}
+.paintLineWidth li {
+    margin: 5px 0;
+}
+.paintLineWidth #paintThick {
+    display: inline-block;
+    height: 0;
+    width: 40px;
+    border-top: 5px solid black;
+    margin-right: 3px;
+}
+.paintLineWidth .iconfont {
+     font-size: 1.3rem;
+     transition: all .2s linear;
+}
+
+.paintLineWidth .iconfont.PTactive {
+    color: yellowgreen;
+}
