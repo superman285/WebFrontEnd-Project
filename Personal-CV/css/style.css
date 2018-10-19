@@ -1,0 +1,356 @@
+
+
+/*header部分*/
+
+body {
+    scroll-behavior: smooth;
+}
+
+/*加载动画*/
+.loadingCircle{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background: white;
+    z-index: 3;
+
+}
+.loadingCircle.over{
+    display: none;
+}
+.loadingCircle:before,.loadingCircle:after {
+    content:'';
+    display: block;
+    position: absolute;
+    border-radius:50%;
+    background: #222;
+    animation: loadingAnim 2s linear infinite;
+}
+.loadingCircle:after {
+    animation-delay: 1s;
+}
+
+@keyframes loadingAnim {
+    0%{
+        width: 5px;
+        height: 5px;
+    }
+    100%{
+        background: transparent;
+        height: 80px;
+        width: 80px;
+    }
+}
+
+
+header {
+    background: transparent;
+    box-shadow: 0 0 6px 1px dimgrey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    transition: all .3s linear;
+}
+.topNavWrap.sticky {
+    background: white;
+}
+
+nav.topNav {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    transition: all .5s linear;
+}
+nav.topNav.sticky {
+    height: 75px;
+    color: black !important;
+}
+
+.topNav a:first-child {
+    margin-right:auto;
+}
+.topNav a:not(:first-child) {
+    margin-left: 40px;
+}
+
+.topNav .logo {
+    margin-bottom: 5px;
+}
+.topNav a {
+    position: relative;
+}
+
+.topNav a:not(:first-of-type)::before {
+    content: '';
+    width: 0;
+    position: absolute;
+    top: 120%;
+    height: 4px;
+    background: #17bed2;
+    transition: all .3s linear;
+}
+.topNav a:not(:first-of-type):hover::before {
+    width: 100%;
+}
+
+.topNav a:not(:first-of-type).highlight::before {
+    width: 100%;
+}
+
+.topNav a:hover .popupMenu {
+    opacity: 1;
+    right: 0;
+}
+ul.popupMenu {
+    opacity: 0;
+    position: absolute;
+    top:140%;
+    right: 50%;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 5px 1px grey;
+    text-align: right;
+    transition: all .3s linear;
+}
+.popupMenu li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.hidden-fix {
+    height: 100px;
+}
+
+
+.topBanner {
+    height: 580px;
+    background: url("../img/1920x1080/01.jpg");
+    background-size: cover;
+    overflow: hidden;
+    margin-top:-100px;
+}
+.myInfo>* {
+    color: white;
+}
+.myInfo h1:first-child {
+    margin-top: 160px;
+}
+.myInfo > *:not(:first-child) {
+    margin-top: 20px;
+}
+.myInfo h1:nth-child(2) {
+    margin-top: 0;
+}
+.myInfo h2 {
+    font-weight: 200;
+}
+.myInfo hr {
+    width: 500px;
+    margin-left: 0;
+}
+.myInfo i {
+    font-size: 24px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/*主体部分*/
+
+.introWrap {
+    height: 620px;
+    overflow: hidden;
+    transform: translateY(250px);
+    transition: all .4s linear;
+}
+/*向上渐渐滑入动效，回归到正常位置，之前是在偏下位置*/
+.introWrap.slideUp {
+    transform: translateY(0);
+}
+/*随着向上渐入进度条的变化动画*/
+.introWrap.slideUp .progressbar1 .progress {
+    width: 80%;
+}
+.introWrap.slideUp .progressbar2 .progress {
+    width: 40%;
+}
+.introWrap.slideUp .progressbar3 .progress {
+    width: 95%;
+}
+.introWrap.slideUp .progressbar4 .progress {
+    width: 60%;
+}
+
+.intro {
+    margin-top: 100px !important;
+    height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+    "i-t i-c"
+    "i-t i-s";
+}
+.intro-title {
+    grid-area: i-t;
+}
+.intro-content {
+    grid-area: i-c;
+}
+.intro-content p:last-child {
+    margin-top: 20px;
+}
+.intro-skills {
+    grid-area: i-s;
+    font-weight: bold;
+}
+.intro-skills>div {
+    margin-bottom: 25px;
+}
+
+.progressbar1,.progressbar2,.progressbar3,.progressbar4 {
+    height: 6px;
+    background: #f3f3f3;
+    border-radius: 3px;
+    margin-top: 22px;
+}
+.progress {
+    height: 6px;
+    background: #17bed2;
+    border-radius: 3px;
+}
+.progressbar1 .progress {
+    width: 0%;
+    transition: width 1s .5s linear;
+}
+.progressbar2 .progress {
+    width: 0%;
+    transition: width 1s 1.5s linear;
+}
+.progressbar3 .progress {
+    width: 0%;
+    transition: width 1s 2.5s linear;
+}
+.progressbar4 .progress {
+    width: 0%;
+    transition: width 1s 3.5s linear;
+}
+
+
+
+.expWrap {
+    height: 450px;
+    background: #fafafa;
+    overflow: hidden;
+    transform: translateY(250px);
+    transition: all .4s linear;
+}
+.expWrap.slideUp {
+    transform: translateY(0);
+}
+.exp {
+    display: flex;
+    margin-top: 100px !important;
+}
+.exp i {
+    font-size: 40px;
+}
+.exp-title {
+    margin-right: auto;
+}
+.exp h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.exp-sk1,.exp-sk2,.exp-sk3 {
+    margin-left: 25px;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow:2px 4px 8px 0 rgba(46,61,73,.2);
+    transition: box-shadow 0.3s linear;
+    cursor: pointer;
+}
+.exp-sk2 {
+    background: #17bed2;
+}
+
+.exp-sk1:hover,.exp-sk2:hover,.exp-sk3:hover {
+    box-shadow:15px 15px 20px 0 rgba(46,61,73,0.15);
+
+}
+
+
+
+
+.worksWrap {
+    height: 620px;
+    overflow: hidden;
+    transform: translateY(250px);
+    transition: all .4s linear;
+}
+.worksWrap.slideUp {
+    transform: translateY(0);
+}
+.works {
+    margin-top: 100px !important;
+    display: grid;
+    grid-template-rows: 255px 190px;
+    grid-template-columns: auto 255px 255px 255px;
+    grid-gap: 2px;
+}
+.works-title {
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+.works-L {
+    grid-row: 1/2;
+    grid-column: 2/4;
+    background: url("../img/800x400/01.jpg");
+    background-size: cover;
+}
+.works-Mt {
+    background: url("../img/397x400/01.jpg");
+    background-size: cover;
+}
+.works-Mb1 {
+    background: url("../img/397x300/01.jpg");
+    background-size: cover;
+}
+.works-Mb2 {
+    background: url("../img/397x300/02.jpg");
+    background-size: cover;
+}
+.works-Mb3 {
+    background: url("../img/397x300/03.jpg");
+    background-size: cover;
+}
+
+.contactsWrap {
+    height: 280px;
+    background: #fafafa;
+    overflow: hidden;
+    transform: translateY(250px);
+    transition: all .4s linear;
+}
+.contactsWrap.slideUp {
+    transform: translateY(0);
+}
+.contacts {
+    display:flex;
+    margin-top: 100px !important;
+}
+.contacts h1,.contacts h4 {
+    color: #484e61;
+}
+.contacts-title {
+    margin-right: auto;
+}
+.contacts>div:not([class=contacts-title]) {
+    margin-right: 60px;
+}

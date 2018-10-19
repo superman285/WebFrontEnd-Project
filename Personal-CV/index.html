@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="iconfont-sns/iconfont.css">
+</head>
+<body id="body">
+    <!--过渡动画圆圈-->
+    <div class="loadingCircle" id="loadingCircle"></div>
+
+    <header class="topNavWrap">
+        <nav class="topNav w">
+            <a href="#" class="logo">
+                <img src="img/logo-dark.png" alt="logo">
+            </a>
+            <a href="#top" class="f14 bold">HOME</a>
+            <a href="#about" class="f14 bold">ABOUT</a>
+            <a href="#exp" class="f14 bold">EXPERIENCE
+                <ul class="popupMenu">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+            </a>
+            <a href="#work" class="f14 bold">WORK
+                <ul class="popupMenu">
+                    <li>DemoZ</li>
+                    <li>ProjectX</li>
+                    <li>WorkY</li>
+                </ul>
+            </a>
+            <a href="#contact" class="f14 bold">CONTACT</a>
+        </nav>
+    </header>
+    <div class="hidden-fix"></div>
+    <div class="topBanner">
+        <div class="myInfo w">
+            <h1>Cyan</h1>
+            <h1>Mr.Wu</h1>
+            <h2>Web Designer & Front-end Developer</h2>
+            <hr>
+            <i class="iconfont icon-social-fb-simple"></i>
+            <i class="iconfont icon-social-twitter"></i>
+            <i class="iconfont icon-social-wechat"></i>
+            <i class="iconfont icon-social-behance"></i>
+            <i class="iconfont icon-social-linkedin"></i>
+        </div>
+    </div>
+
+
+    <div class="introWrap offsetYdiv" id="about">
+        <section class="intro w">
+            <div class="intro-title">
+                <h1 class="titleColor">Intro</h1>
+                <span class="grey">What I am all about.</span>
+            </div>
+            <div class="intro-content">
+                <p class="grey">I'm Cyan.wu.I have a strong personality, adaptability, honesty, good interpersonal skills, with relevant professional knowledge and serious. </p>
+                <p class="grey">Careful, patient work attitude and good professional ethics. I believe in team spirit. I am serious and responsible for my work. I always hope to do better.</p>
+            </div>
+            <div class="intro-skills">
+                <div>
+                    JavaScript
+                    <div class="progressbar1">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <div>
+                    HTML5
+                    <div class="progressbar2">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <div>
+                    CSS3
+                    <div class="progressbar3">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <div>
+                    Node.js
+                    <div class="progressbar4">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="expWrap offsetYdiv" id="exp">
+        <section class="exp w">
+            <div class="exp-title">
+
+                <h1 class="titleColor">Experience</h1>
+                <span class="grey">Batman would be jealous.</span>
+            </div>
+            <div class="exp-sk1">
+                <i class="iconfont icon-social-slack"></i>
+                <h2>HTML/CSS3</h2>
+                <p class="grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim placeat quis.</p>
+            </div>
+            <div class="exp-sk2">
+                <i class="iconfont icon-social-github white"></i>
+                <h2 class="white">JavaScript</h2>
+                <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi cum ipsa non veritatis.</p>
+            </div>
+            <div class="exp-sk3">
+                <i class="iconfont icon-social-yelp"></i>
+                <h2>Front-end</h2>
+                <p class="grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto officia possimus veniam.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="worksWrap offsetYdiv" id="work">
+        <section class="works w">
+            <div class="works-title">
+                <h1 class="titleColor">Works</h1>
+                <span class="grey">I build the real value.</span>
+            </div>
+            <div class="works-L"></div>
+
+            <div class="works-Mt"></div>
+            <div class="works-Mb1"></div>
+            <div class="works-Mb2"></div>
+            <div class="works-Mb3"></div>
+
+        </section>
+    </div>
+
+    <footer class="contactsWrap offsetYdiv" id="contact">
+        <section class="contacts w">
+            <div class="contacts-title">
+                <h1>Contacts</h1>
+                <span class="grey">Hire me.</span>
+            </div>
+            <div>
+                <h4>Location</h4>
+                <span class="grey f14">WangJing,BeiJing</span>
+            </div>
+            <div>
+                <h4>Phone</h4>
+                <span class="grey f14">+00861345678</span>
+            </div>
+            <div>
+                <h4>Email</h4>
+                <span class="grey f14">cyan.wu@foxmail.com</span>
+            </div>
+            <div>
+                <h4>Web</h4>
+                <span class="grey f14">https://skr.dog</span>
+            </div>
+        </section>
+    </footer>
+    <script>
+        body.style = "overflow-y:hidden;";
+        setTimeout(function(){
+            loadingCircle.classList.add('over');
+            body.style = "overflow-y:auto;"
+        },500);
+    </script>
+    <script src="js/siteFX.js"></script>
+</body>
+</html>

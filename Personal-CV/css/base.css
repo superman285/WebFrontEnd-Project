@@ -1,0 +1,110 @@
+/*css reset 样式初始化*/
+
+body,dl,dt,dd,ul,ol,li,form,input,p,th,td,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+    font-family:"微软雅黑";
+}
+header,footer,article,aside,section,nav,menu,hgroup,details,dialog,figure,figcaption{
+    display:block
+}
+ol,li,ul,dl,dt,dd{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#666560;
+}
+a:hover{
+    color:#666560;
+}
+
+input,img,button{
+    border:none;
+    outline:none;
+    vertical-align: middle;
+    padding:0;
+}
+table{
+    border-collapse:collapse;
+    border-spacing: 0;
+}
+
+html{
+    min-width: 1100px;
+}
+
+.w{
+    width: 1060px;
+    margin: 0 auto;
+}
+
+
+
+/*字体*/
+.white {
+    color: #fff;
+}
+.grey {
+    color: darkgrey;
+}
+.titleColor {
+    color: #484e61;
+}
+
+.f20{
+    font-size: 20px;
+    font-weight: bold;
+}
+.f18{
+    font-size: 18px;
+}
+.f16{
+    font-size: 16px;
+}
+.f14{
+    font-size: 14px;
+}
+.f13{
+    font-size: 14px;
+}
+.f12{
+    font-size: 12px;
+}
+.bold{
+    font-weight: bold;
+}
+
+/*清除浮动,给父元素设置，after是父元素的最后那儿加*/
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix{
+    zoom: 1;
+}
+/*左浮动*/
+.fl{
+    float:left;
+}
+/*右浮动*/
+.fr{
+    float:right;
+}
+
+/*父元素加上该属性清除 行内子元素之间的空白间距*/
+.clear-linespacing{
+    font-size: 0px;
+}
+
+/*边框和padding不影响实际大小的css3新属性*/
+.border-box{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+

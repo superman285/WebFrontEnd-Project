@@ -233,7 +233,7 @@ function watchAction(canvas) {
         }else {
             console.log('鼠标提起了');
         }
-    });
+    })
 
 }
 
