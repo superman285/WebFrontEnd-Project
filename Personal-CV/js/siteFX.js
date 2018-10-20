@@ -1,3 +1,4 @@
+
 var sitePart = document.getElementsByClassName("offsetYdiv");
 var offsetY_Part;
 
@@ -50,6 +51,44 @@ function tabAutoHighLight(scrollY) {
         }
     }
 }
+
+//tween.js方法
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+function slideUpAnim(targetTop){
+    var coords = { y: window.scrollY };
+    var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, 2000)
+        .easing(TWEEN.Easing.Cubic.InOut)
+        .onUpdate(function() {
+            window.scrollTo(0,coords.y);
+        })
+        .start();
+    //滑动距离为targetTop - window.scrollY
+    console.log('tween真的动起来了');
+}
+//原生js setInterval方法
+function slideUpAnimJS(targetTop){
+    let n = 20;
+    let duration = 50;
+    let ic = 0;
+    function stepAnim(){
+        let step = (targetTop - window.scrollY)/n;
+        let scAnim = setInterval(()=>{
+            if(ic === n){
+                window.clearInterval(scAnim);
+                return;
+            }
+            ic = ic + 1;
+            window.scrollTo(0, window.scrollY + step);
+            console.log('步进'+step * ic);
+        },duration);
+    }
+}
+
 //阻止topNav的链接的默认跳转行为，用js来跳转
 function preventDefalut(){
     var aTags = document.querySelectorAll(".topNavWrap a");
@@ -57,36 +96,24 @@ function preventDefalut(){
         console.log(aTags[i]);
         aTags[i].onclick = (event)=>{
             event.preventDefault();
-            let n = 20;
-            let duration = 50;
-            let ic = 0;
-            function stepAnim(targetTop){
-                let step = (targetTop - window.scrollY)/n;
-                let scAnim = setInterval(()=>{
-                    if(ic === n){
-                        window.clearInterval(scAnim);
-                        return;
-                    }
-                    ic = ic + 1;
-                    window.scrollTo(0, window.scrollY + step);
-                    console.log('步进'+step * ic);
-                },duration);
-            }
             switch (i){
                 case 0:
                 case 1:
-                    stepAnim(0);
+                    slideUpAnim(0);
+                    // stepAnim(0);
                     // window.scrollTo(0,0); //顶
                     break;
                 case 2:
-                    stepAnim(510);
+                    slideUpAnim(510);
                     break;
                 case 3:
-                    stepAnim(1120);
+                    slideUpAnim(1120);
+                    // stepAnim(1120);
                     // window.scrollTo(0,1120); //1120
                     break;
                 case 4:
-                    stepAnim(1570);
+                    slideUpAnim(1570);
+                    // stepAnim(1570);
                     // window.scrollTo(0,1570); //1570
                     break;
             }
